@@ -13,8 +13,58 @@ const recipeService = new RecipeService();
 const categoryService = new CategoryService();
 
 // Load Swagger document
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Recipe:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *         name:
+ *           type: string
+ *         description:
+ *           type: string
+ *         ingredients:
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               amount:
+ *                 type: string
+ *         instructions:
+ *           type: array
+ *           items:
+ *             type: string
+ *         categoryId:
+ *           type: string
+ *         nutrition:
+ *           type: object
+ *           properties:
+ *             calories:
+ *               type: number
+ *             protein:
+ *               type: number
+ *             carbohydrates:
+ *               type: number
+ *             fat:
+ *               type: number
+ *     Category:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *         name:
+ *           type: string
+ *         description:
+ *           type: string
+ */
+
 const swaggerOptions = {
-  swaggerDefinition: {
+  definition: {
     openapi: '3.0.0',
     info: {
       title: 'Turkish Recipe API',
@@ -23,12 +73,12 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+        url: '/',
         description: 'API Server'
       }
     ]
   },
-  apis: ['./src/index.ts']
+  apis: [path.join(__dirname, 'index.ts')]
 };
 
 // Enable CORS for all routes
@@ -72,6 +122,24 @@ app.get('/api/recipes', (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /api/recipes/{id}:
+ *   get:
+ *     summary: Get recipe by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Recipe ID
+ *     responses:
+ *       200:
+ *         description: Recipe details
+ *       404:
+ *         description: Recipe not found
+ */
 app.get('/api/recipes/:id', (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -92,7 +160,15 @@ app.get('/api/recipes/:id', (req, res) => {
   }
 });
 
-// Category Routes
+/**
+ * @swagger
+ * /api/categories:
+ *   get:
+ *     summary: Get all categories
+ *     responses:
+ *       200:
+ *         description: List of categories
+ */
 app.get('/api/categories', (_req, res) => {
   try {
     const result = categoryService.getCategories();
@@ -102,6 +178,24 @@ app.get('/api/categories', (_req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /api/categories/{id}:
+ *   get:
+ *     summary: Get category by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Category ID
+ *     responses:
+ *       200:
+ *         description: Category details
+ *       404:
+ *         description: Category not found
+ */
 app.get('/api/categories/:id', (req, res) => {
   try {
     const category = categoryService.getCategoryById(req.params.id);
