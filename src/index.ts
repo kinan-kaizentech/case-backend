@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc';
+import YAML from 'yamljs';
 import path from 'path';
 import { RecipeService } from './services/recipeService';
 import { CategoryService } from './services/categoryService';
@@ -13,73 +13,7 @@ const recipeService = new RecipeService();
 const categoryService = new CategoryService();
 
 // Load Swagger document
-/**
- * @swagger
- * components:
- *   schemas:
- *     Recipe:
- *       type: object
- *       properties:
- *         id:
- *           type: integer
- *         name:
- *           type: string
- *         description:
- *           type: string
- *         ingredients:
- *           type: array
- *           items:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               amount:
- *                 type: string
- *         instructions:
- *           type: array
- *           items:
- *             type: string
- *         categoryId:
- *           type: string
- *         nutrition:
- *           type: object
- *           properties:
- *             calories:
- *               type: number
- *             protein:
- *               type: number
- *             carbohydrates:
- *               type: number
- *             fat:
- *               type: number
- *     Category:
- *       type: object
- *       properties:
- *         id:
- *           type: string
- *         name:
- *           type: string
- *         description:
- *           type: string
- */
-
-const swaggerOptions = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Turkish Recipe API',
-      version: '1.0.0',
-      description: 'Simple REST API for Turkish recipes'
-    },
-    servers: [
-      {
-        url: '/',
-        description: 'API Server'
-      }
-    ]
-  },
-  apis: [path.join(__dirname, 'index.ts')]
-};
+const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
 
 // Enable CORS for all routes
 app.use(cors({
@@ -89,27 +23,12 @@ app.use(cors({
 }));
 
 // Basic middleware
-const specs = swaggerJsdoc(swaggerOptions);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-/**
- * @swagger
- * /api/recipes:
- *   get:
- *     summary: Get all recipes
- *     parameters:
- *       - in: query
- *         name: categoryId
- *         schema:
- *           type: string
- *         description: Filter by category ID
- *     responses:
- *       200:
- *         description: List of recipes
- */
+// Get all recipes
 app.get('/api/recipes', (req, res) => {
   try {
     const filters = {
@@ -122,24 +41,7 @@ app.get('/api/recipes', (req, res) => {
   }
 });
 
-/**
- * @swagger
- * /api/recipes/{id}:
- *   get:
- *     summary: Get recipe by ID
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Recipe ID
- *     responses:
- *       200:
- *         description: Recipe details
- *       404:
- *         description: Recipe not found
- */
+// Get recipe by ID
 app.get('/api/recipes/:id', (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -160,15 +62,7 @@ app.get('/api/recipes/:id', (req, res) => {
   }
 });
 
-/**
- * @swagger
- * /api/categories:
- *   get:
- *     summary: Get all categories
- *     responses:
- *       200:
- *         description: List of categories
- */
+// Get all categories
 app.get('/api/categories', (_req, res) => {
   try {
     const result = categoryService.getCategories();
@@ -178,24 +72,7 @@ app.get('/api/categories', (_req, res) => {
   }
 });
 
-/**
- * @swagger
- * /api/categories/{id}:
- *   get:
- *     summary: Get category by ID
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Category ID
- *     responses:
- *       200:
- *         description: Category details
- *       404:
- *         description: Category not found
- */
+// Get category by ID
 app.get('/api/categories/:id', (req, res) => {
   try {
     const category = categoryService.getCategoryById(req.params.id);

@@ -13,7 +13,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.3",
     "helmet": "^7.1.0",
-    "swagger-jsdoc": "^6.2.8",
+    "yamljs": "^0.3.0",
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
