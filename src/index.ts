@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import swaggerUi from 'swagger-ui-express';
+
 import YAML from 'yamljs';
 import path from 'path';
 import { RecipeService } from './services/recipeService';
@@ -25,15 +25,45 @@ app.use(cors({
 // Basic middleware
 app.use(cors());
 
-// Serve Swagger UI static files
-app.use('/api-docs', swaggerUi.serve);
-app.get('/api-docs', swaggerUi.setup(swaggerDocument, {
-  explorer: true,
-  customCss: '.swagger-ui .topbar { display: none }',
-  swaggerOptions: {
-    url: '/swagger.yaml'
-  }
-}));
+// Serve Swagger UI
+app.get('/api-docs', (_req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Turkish Recipe API - Swagger UI</title>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.11.0/swagger-ui.css">
+      <style>
+        .topbar { display: none }
+      </style>
+    </head>
+    <body>
+      <div id="swagger-ui"></div>
+      <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.11.0/swagger-ui-standalone-preset.js"></script>
+      <script>
+        window.onload = () => {
+          const ui = SwaggerUIBundle({
+            url: '/swagger.yaml',
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+              SwaggerUIBundle.presets.apis,
+              SwaggerUIStandalonePreset
+            ],
+            plugins: [
+              SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout"
+          });
+          window.ui = ui;
+        };
+      </script>
+    </body>
+    </html>
+  `);
+});
 
 // Serve swagger.yaml
 app.get('/swagger.yaml', (_req, res) => {
