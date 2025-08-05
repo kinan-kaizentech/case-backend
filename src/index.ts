@@ -1,8 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-
-
-import YAML from 'yamljs';
 import path from 'path';
 import { RecipeService } from './services/recipeService';
 import { CategoryService } from './services/categoryService';
@@ -12,18 +9,12 @@ const PORT = process.env.PORT || 3000;
 const recipeService = new RecipeService();
 const categoryService = new CategoryService();
 
-// Load Swagger document
-const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
-
 // Enable CORS for all routes
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-// Basic middleware
-app.use(cors());
 
 // Serve Swagger UI
 app.get('/api-docs', (_req, res) => {
@@ -79,9 +70,13 @@ app.get('/api/recipes', (req, res) => {
       categoryId: req.query.categoryId as string
     };
     const result = recipeService.getRecipes(filters);
-    res.json(result);
+    res.json({ data: result.data, total: result.total });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    console.error('Error:', error);
+    res.status(500).json({ 
+      message: 'Internal server error',
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 });
 
@@ -100,9 +95,13 @@ app.get('/api/recipes/:id', (req, res) => {
       return res.status(404).json({ message: 'Recipe not found' });
     }
     
-    res.json(recipe);
+    res.json({ data: recipe });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    console.error('Error:', error);
+    res.status(500).json({ 
+      message: 'Internal server error',
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 });
 
@@ -110,9 +109,13 @@ app.get('/api/recipes/:id', (req, res) => {
 app.get('/api/categories', (_req, res) => {
   try {
     const result = categoryService.getCategories();
-    res.json(result);
+    res.json({ data: result.data, total: result.total });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    console.error('Error:', error);
+    res.status(500).json({ 
+      message: 'Internal server error',
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 });
 
@@ -127,7 +130,11 @@ app.get('/api/categories/:id', (req, res) => {
     
     res.json({ data: category });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    console.error('Error:', error);
+    res.status(500).json({ 
+      message: 'Internal server error',
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 });
 
