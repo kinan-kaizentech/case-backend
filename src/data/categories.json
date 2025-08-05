@@ -1,0 +1,42 @@
+[
+  {
+    "id": "main-course",
+    "name": "Ana Yemek",
+    "description": "Türk mutfağının ana yemekleri"
+  },
+  {
+    "id": "soup",
+    "name": "Çorba",
+    "description": "Geleneksel Türk çorbaları"
+  },
+  {
+    "id": "meze",
+    "name": "Meze",
+    "description": "Soğuk ve sıcak mezeler"
+  },
+  {
+    "id": "dessert",
+    "name": "Tatlı",
+    "description": "Geleneksel Türk tatlıları"
+  },
+  {
+    "id": "breakfast",
+    "name": "Kahvaltılık",
+    "description": "Türk kahvaltısı için tarifler"
+  },
+  {
+    "id": "pastry",
+    "name": "Hamur İşi",
+    "description": "Börek ve hamur işi tarifleri"
+  },
+  {
+    "id": "vegetarian",
+    "name": "Zeytinyağlı",
+    "description": "Zeytinyağlı ve vejeteryan yemekler"
+  },
+  {
+    "id": "rice-pasta",
+    "name": "Pilav ve Makarna",
+    "description": "Pilav ve makarna çeşitleri"
+  }
+]

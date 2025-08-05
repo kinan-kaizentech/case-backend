@@ -1,0 +1,356 @@
+[
+  {
+    "id": 1,
+    "name": "Karnıyarık",
+    "description": "Patlıcan içine kıymalı harç konularak yapılan geleneksel Türk yemeği",
+    "categoryId": "main-course",
+    "difficulty": "Medium",
+    "prepTime": 30,
+    "cookTime": 45,
+    "servings": 4,
+    "calories": 320,
+    "image": "https://example.com/images/karniyarik.jpg",
+    "ingredients": [
+      { "name": "patlıcan", "amount": 4, "unit": "adet" },
+      { "name": "kıyma", "amount": 400, "unit": "gram" },
+      { "name": "soğan", "amount": 2, "unit": "adet" },
+      { "name": "domates", "amount": 2, "unit": "adet" },
+      { "name": "yeşil biber", "amount": 4, "unit": "adet" },
+      { "name": "sarımsak", "amount": 3, "unit": "diş" },
+      { "name": "zeytinyağı", "amount": 100, "unit": "ml" },
+      { "name": "tuz", "amount": 1, "unit": "tatlı kaşığı" },
+      { "name": "karabiber", "amount": 1, "unit": "çay kaşığı" }
+    ],
+    "instructions": [
+      "Patlıcanları alacalı soyup tuzlu suda bekletin",
+      "Kıymalı harcı hazırlayın: Soğanları yemeklik doğrayıp kıyma ile kavurun",
+      "Domates, biber ve baharatları ekleyip pişirin",
+      "Patlıcanları kızartın ve ortalarını yarın",
+      "İçlerine kıymalı harç doldurun",
+      "180 derece fırında 25-30 dakika pişirin"
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": 18,
+      "carbohydrates": 24,
+      "fat": 15,
+      "fiber": 8
+    }
+  },
+  {
+    "id": 2,
+    "name": "Mercimek Çorbası",
+    "description": "Kırmızı mercimek ile yapılan besleyici ve lezzetli çorba",
+    "categoryId": "soup",
+    "difficulty": "Easy",
+    "prepTime": 15,
+    "cookTime": 30,
+    "servings": 6,
+    "calories": 180,
+    "image": "https://example.com/images/mercimek-corbasi.jpg",
+    "ingredients": [
+      { "name": "kırmızı mercimek", "amount": 2, "unit": "su bardağı" },
+      { "name": "soğan", "amount": 1, "unit": "adet" },
+      { "name": "havuç", "amount": 1, "unit": "adet" },
+      { "name": "patates", "amount": 1, "unit": "adet" },
+      { "name": "zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "tuz", "amount": 1, "unit": "tatlı kaşığı" },
+      { "name": "karabiber", "amount": 1, "unit": "çay kaşığı" }
+    ],
+    "instructions": [
+      "Sebzeleri küçük küçük doğrayın",
+      "Zeytinyağında soğanları kavurun",
+      "Diğer sebzeleri ekleyip 2-3 dakika kavurun",
+      "Mercimeği ve 8 su bardağı suyu ekleyin",
+      "Tüm malzemeler yumuşayana kadar pişirin",
+      "Blenderdan geçirip pürüzsüz hale getirin",
+      "Tuz ve karabiber ekleyip karıştırın"
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": 10,
+      "carbohydrates": 30,
+      "fat": 4,
+      "fiber": 6
+    }
+  },
+  {
+    "id": 3,
+    "name": "Yaprak Sarma",
+    "description": "Asma yaprağına pirinç ve baharatlarla hazırlanan iç harç ile yapılan zeytinyağlı yemek",
+    "categoryId": "vegetarian",
+    "difficulty": "Hard",
+    "prepTime": 60,
+    "cookTime": 45,
+    "servings": 6,
+    "calories": 220,
+    "image": "https://example.com/images/yaprak-sarma.jpg",
+    "ingredients": [
+      { "name": "asma yaprağı", "amount": 40, "unit": "adet" },
+      { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
+      { "name": "soğan", "amount": 2, "unit": "adet" },
+      { "name": "maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "nane", "amount": 0.5, "unit": "demet" },
+      { "name": "zeytinyağı", "amount": 100, "unit": "ml" },
+      { "name": "limon", "amount": 1, "unit": "adet" }
+    ],
+    "instructions": [
+      "Yaprakları tuzlu suda haşlayın",
+      "Pirinci yıkayıp süzün",
+      "İç harcı için soğanları ince doğrayın",
+      "Tüm malzemeleri karıştırıp iç harcı hazırlayın",
+      "Yaprakları tek tek açıp iç harçtan koyarak sarın",
+      "Tencereye dizin ve üzerine limon dilimleri yerleştirin",
+      "Kısık ateşte 45 dakika pişirin"
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": 5,
+      "carbohydrates": 35,
+      "fat": 8,
+      "fiber": 4
+    }
+  },
+  {
+    "id": 4,
+    "name": "İskender Kebap",
+    "description": "Döner et, pide, domates sosu ve yoğurt ile hazırlanan meşhur Türk yemeği",
+    "categoryId": "main-course",
+    "difficulty": "Hard",
+    "prepTime": 45,
+    "cookTime": 60,
+    "servings": 4,
+    "calories": 650,
+    "image": "https://example.com/images/iskender-kebap.jpg",
+    "ingredients": [
+      { "name": "kuzu eti", "amount": 500, "unit": "gram" },
+      { "name": "pide", "amount": 4, "unit": "adet" },
+      { "name": "tereyağı", "amount": 100, "unit": "gram" },
+      { "name": "domates", "amount": 4, "unit": "adet" },
+      { "name": "yoğurt", "amount": 400, "unit": "gram" }
+    ],
+    "instructions": [
+      "Eti ince ince dilimleyin ve marine edin",
+      "Domates sosunu hazırlayın",
+      "Pideleri küçük parçalara bölün",
+      "Eti ızgarada pişirin",
+      "Tereyağını kızdırın",
+      "Tabaklara pideleri yerleştirin",
+      "Üzerine etleri koyun",
+      "Domates sosu ve kızdırılmış tereyağı gezdirin"
+    ],
+    "nutrition": {
+      "calories": 650,
+      "protein": 35,
+      "carbohydrates": 45,
+      "fat": 28,
+      "fiber": 3
+    }
+  },
+  {
+    "id": 5,
+    "name": "Sütlaç",
+    "description": "Pirinç, süt ve şeker ile yapılan geleneksel Türk tatlısı",
+    "categoryId": "dessert",
+    "difficulty": "Medium",
+    "prepTime": 20,
+    "cookTime": 40,
+    "servings": 6,
+    "calories": 285,
+    "image": "https://example.com/images/sutlac.jpg",
+    "ingredients": [
+      { "name": "süt", "amount": 1, "unit": "litre" },
+      { "name": "pirinç", "amount": 0.5, "unit": "su bardağı" },
+      { "name": "şeker", "amount": 1, "unit": "su bardağı" },
+      { "name": "pirinç unu", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "vanilya", "amount": 1, "unit": "paket" }
+    ],
+    "instructions": [
+      "Pirinci yumuşayana kadar haşlayın",
+      "Sütü kaynatın",
+      "Pirinç ve şekeri ekleyin",
+      "Koyulaşana kadar karıştırarak pişirin",
+      "Güveç kaplarına paylaştırın",
+      "Fırında üzeri kızarana kadar pişirin"
+    ],
+    "nutrition": {
+      "calories": 285,
+      "protein": 8,
+      "carbohydrates": 45,
+      "fat": 6,
+      "fiber": 0
+    }
+  },
+  {
+    "id": 6,
+    "name": "Menemen",
+    "description": "Domates, biber ve yumurta ile yapılan geleneksel Türk kahvaltılık yemeği",
+    "categoryId": "breakfast",
+    "difficulty": "Easy",
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 2,
+    "calories": 240,
+    "image": "https://example.com/images/menemen.jpg",
+    "ingredients": [
+      { "name": "domates", "amount": 3, "unit": "adet" },
+      { "name": "yeşil biber", "amount": 2, "unit": "adet" },
+      { "name": "yumurta", "amount": 3, "unit": "adet" },
+      { "name": "zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "tuz", "amount": 1, "unit": "çay kaşığı" }
+    ],
+    "instructions": [
+      "Domatesleri küp küp doğrayın",
+      "Biberleri ince ince doğrayın",
+      "Zeytinyağında biberleri kavurun",
+      "Domatesleri ekleyip pişirin",
+      "Yumurtaları kırıp karıştırın",
+      "İstediğiniz kıvama gelene kadar pişirin"
+    ],
+    "nutrition": {
+      "calories": 240,
+      "protein": 12,
+      "carbohydrates": 8,
+      "fat": 18,
+      "fiber": 3
+    }
+  },
+  {
+    "id": 7,
+    "name": "Su Böreği",
+    "description": "Kat kat yufkaların arasına peynir konularak yapılan geleneksel Türk böreği",
+    "categoryId": "pastry",
+    "difficulty": "Hard",
+    "prepTime": 45,
+    "cookTime": 35,
+    "servings": 8,
+    "calories": 380,
+    "image": "https://example.com/images/su-boregi.jpg",
+    "ingredients": [
+      { "name": "yufka", "amount": 5, "unit": "adet" },
+      { "name": "beyaz peynir", "amount": 400, "unit": "gram" },
+      { "name": "maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "tereyağı", "amount": 150, "unit": "gram" },
+      { "name": "süt", "amount": 1, "unit": "su bardağı" }
+    ],
+    "instructions": [
+      "Yufkaları ıslatın",
+      "Peynirli iç harcı hazırlayın",
+      "Yufkaları teker teker serin",
+      "Aralarına iç harcı koyun",
+      "Üzerine tereyağı gezdirin",
+      "180 derecede üzeri kızarana kadar pişirin"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": 15,
+      "carbohydrates": 28,
+      "fat": 22,
+      "fiber": 1
+    }
+  },
+  {
+    "id": 8,
+    "name": "Pilav",
+    "description": "Tereyağlı ve şehriyeli geleneksel Türk pilavı",
+    "categoryId": "rice-pasta",
+    "difficulty": "Medium",
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 6,
+    "calories": 280,
+    "image": "https://example.com/images/pilav.jpg",
+    "ingredients": [
+      { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
+      { "name": "şehriye", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "tereyağı", "amount": 50, "unit": "gram" },
+      { "name": "sıcak su", "amount": 3.5, "unit": "su bardağı" },
+      { "name": "tuz", "amount": 1.5, "unit": "tatlı kaşığı" }
+    ],
+    "instructions": [
+      "Pirinci yıkayıp süzün",
+      "Şehriyeyi tereyağında kavurun",
+      "Pirinci ekleyip kavurmaya devam edin",
+      "Sıcak su ve tuzu ekleyin",
+      "Kısık ateşte suyunu çekene kadar pişirin",
+      "Demlenmeye bırakın"
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": 5,
+      "carbohydrates": 48,
+      "fat": 8,
+      "fiber": 1
+    }
+  },
+  {
+    "id": 9,
+    "name": "Patlıcan Musakka",
+    "description": "Kıymalı ve patlıcanlı geleneksel Türk yemeği",
+    "categoryId": "main-course",
+    "difficulty": "Medium",
+    "prepTime": 30,
+    "cookTime": 40,
+    "servings": 6,
+    "calories": 340,
+    "image": "https://example.com/images/patlican-musakka.jpg",
+    "ingredients": [
+      { "name": "patlıcan", "amount": 6, "unit": "adet" },
+      { "name": "kıyma", "amount": 400, "unit": "gram" },
+      { "name": "soğan", "amount": 2, "unit": "adet" },
+      { "name": "domates", "amount": 3, "unit": "adet" },
+      { "name": "biber", "amount": 2, "unit": "adet" },
+      { "name": "zeytinyağı", "amount": 100, "unit": "ml" }
+    ],
+    "instructions": [
+      "Patlıcanları dilimleyip tuzlayın",
+      "Kıymalı harcı hazırlayın",
+      "Patlıcanları kızartın",
+      "Tencereye sırayla patlıcan ve kıyma dizin",
+      "Domates sosu hazırlayıp üzerine dökün",
+      "Kısık ateşte pişirin"
+    ],
+    "nutrition": {
+      "calories": 340,
+      "protein": 16,
+      "carbohydrates": 22,
+      "fat": 20,
+      "fiber": 7
+    }
+  },
+  {
+    "id": 10,
+    "name": "İmam Bayıldı",
+    "description": "Zeytinyağlı patlıcan yemeği",
+    "categoryId": "vegetarian",
+    "difficulty": "Medium",
+    "prepTime": 25,
+    "cookTime": 35,
+    "servings": 4,
+    "calories": 220,
+    "image": "https://example.com/images/imam-bayildi.jpg",
+    "ingredients": [
+      { "name": "patlıcan", "amount": 4, "unit": "adet" },
+      { "name": "soğan", "amount": 3, "unit": "adet" },
+      { "name": "domates", "amount": 2, "unit": "adet" },
+      { "name": "sarımsak", "amount": 4, "unit": "diş" },
+      { "name": "maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "zeytinyağı", "amount": 100, "unit": "ml" }
+    ],
+    "instructions": [
+      "Patlıcanları boydan yarın",
+      "İç kısımlarını oyun",
+      "Soğan ve domatesi ince doğrayın",
+      "İç malzemeyi hazırlayıp patlıcanlara doldurun",
+      "Üzerine domates sosu dökün",
+      "Kısık ateşte pişirin"
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": 4,
+      "carbohydrates": 20,
+      "fat": 14,
+      "fiber": 8
+    }
+  }
+]
