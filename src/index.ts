@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
+
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
@@ -23,9 +23,23 @@ app.use(cors({
 }));
 
 // Basic middleware
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
-app.use(helmet());
+
+// Serve Swagger UI static files
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerDocument, {
+  explorer: true,
+  customCss: '.swagger-ui .topbar { display: none }',
+  swaggerOptions: {
+    url: '/swagger.yaml'
+  }
+}));
+
+// Serve swagger.yaml
+app.get('/swagger.yaml', (_req, res) => {
+  res.setHeader('Content-Type', 'text/yaml');
+  res.sendFile(path.join(__dirname, '../swagger.yaml'));
+});
 app.use(express.json());
 
 // Get all recipes
