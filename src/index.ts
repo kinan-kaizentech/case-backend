@@ -15,6 +15,13 @@ const categoryService = new CategoryService();
 // Load Swagger document
 const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
 
+// Enable CORS for all routes
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 // Basic middleware
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
