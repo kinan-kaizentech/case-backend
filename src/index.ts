@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
-import YAML from 'yamljs';
+import swaggerJsdoc from 'swagger-jsdoc';
 import path from 'path';
 import { RecipeService } from './services/recipeService';
 import { CategoryService } from './services/categoryService';
@@ -13,7 +13,23 @@ const recipeService = new RecipeService();
 const categoryService = new CategoryService();
 
 // Load Swagger document
-const swaggerDocument = YAML.load(path.join(__dirname, '../swagger.yaml'));
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Turkish Recipe API',
+      version: '1.0.0',
+      description: 'Simple REST API for Turkish recipes'
+    },
+    servers: [
+      {
+        url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+        description: 'API Server'
+      }
+    ]
+  },
+  apis: ['./src/index.ts']
+};
 
 // Enable CORS for all routes
 app.use(cors({
@@ -23,12 +39,27 @@ app.use(cors({
 }));
 
 // Basic middleware
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const specs = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-// Recipe Routes
+/**
+ * @swagger
+ * /api/recipes:
+ *   get:
+ *     summary: Get all recipes
+ *     parameters:
+ *       - in: query
+ *         name: categoryId
+ *         schema:
+ *           type: string
+ *         description: Filter by category ID
+ *     responses:
+ *       200:
+ *         description: List of recipes
+ */
 app.get('/api/recipes', (req, res) => {
   try {
     const filters = {
