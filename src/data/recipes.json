@@ -9,7 +9,7 @@
     "cookTime": 45,
     "servings": 4,
     "calories": 320,
-    "image": "/images/karniyarik.jpg",
+    "image": "https://case-backend.vercel.app/images/karniyarik.jpg",
     "ingredients": [
       { "name": "patlıcan", "amount": 4, "unit": "adet" },
       { "name": "kıyma", "amount": 400, "unit": "gram" },
@@ -47,7 +47,7 @@
     "cookTime": 30,
     "servings": 6,
     "calories": 180,
-    "image": "/images/mercimek.jpg",
+    "image": "https://case-backend.vercel.app/images/mercimek.jpg",
     "ingredients": [
       { "name": "kırmızı mercimek", "amount": 2, "unit": "su bardağı" },
       { "name": "soğan", "amount": 1, "unit": "adet" },
@@ -84,7 +84,7 @@
     "cookTime": 45,
     "servings": 6,
     "calories": 220,
-    "image": "/images/sarma.jpg",
+    "image": "https://case-backend.vercel.app/images/sarma.jpg",
     "ingredients": [
       { "name": "asma yaprağı", "amount": 40, "unit": "adet" },
       { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
@@ -121,7 +121,7 @@
     "cookTime": 60,
     "servings": 4,
     "calories": 650,
-    "image": "/images/iskender.jpg",
+    "image": "https://case-backend.vercel.app/images/iskender.jpg",
     "ingredients": [
       { "name": "kuzu eti", "amount": 500, "unit": "gram" },
       { "name": "pide", "amount": 4, "unit": "adet" },
@@ -157,7 +157,7 @@
     "cookTime": 40,
     "servings": 6,
     "calories": 285,
-    "image": "/images/sutlac.jpg",
+    "image": "https://case-backend.vercel.app/images/sutlac.jpg",
     "ingredients": [
       { "name": "süt", "amount": 1, "unit": "litre" },
       { "name": "pirinç", "amount": 0.5, "unit": "su bardağı" },
@@ -191,7 +191,7 @@
     "cookTime": 15,
     "servings": 2,
     "calories": 240,
-    "image": "/images/menemen.jpg",
+    "image": "https://case-backend.vercel.app/images/menemen.jpg",
     "ingredients": [
       { "name": "domates", "amount": 3, "unit": "adet" },
       { "name": "yeşil biber", "amount": 2, "unit": "adet" },
@@ -225,7 +225,7 @@
     "cookTime": 35,
     "servings": 8,
     "calories": 380,
-    "image": "/images/borek.jpg",
+    "image": "https://case-backend.vercel.app/images/borek.jpg",
     "ingredients": [
       { "name": "yufka", "amount": 5, "unit": "adet" },
       { "name": "beyaz peynir", "amount": 400, "unit": "gram" },
@@ -259,7 +259,7 @@
     "cookTime": 20,
     "servings": 6,
     "calories": 280,
-    "image": "/images/pilav.webp",
+    "image": "https://case-backend.vercel.app/images/pilav.webp",
     "ingredients": [
       { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
       { "name": "şehriye", "amount": 2, "unit": "yemek kaşığı" },
@@ -293,7 +293,7 @@
     "cookTime": 40,
     "servings": 6,
     "calories": 340,
-    "image": "/images/musakka.webp",
+    "image": "https://case-backend.vercel.app/images/musakka.webp",
     "ingredients": [
       { "name": "patlıcan", "amount": 6, "unit": "adet" },
       { "name": "kıyma", "amount": 400, "unit": "gram" },
@@ -328,7 +328,7 @@
     "cookTime": 35,
     "servings": 4,
     "calories": 220,
-    "image": "/images/imambayildi.webp",
+    "image": "https://case-backend.vercel.app/images/imambayildi.webp",
     "ingredients": [
       { "name": "patlıcan", "amount": 4, "unit": "adet" },
       { "name": "soğan", "amount": 3, "unit": "adet" },
