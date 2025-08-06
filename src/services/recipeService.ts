@@ -16,6 +16,14 @@ export class RecipeService {
       );
     }
 
+    if (filters?.keyword) {
+      const searchTerm = filters.keyword.toLowerCase();
+      filteredRecipes = filteredRecipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(searchTerm) ||
+        recipe.description.toLowerCase().includes(searchTerm)
+      );
+    }
+
     const recipeList: RecipeListItem[] = filteredRecipes.map(recipe => ({
       id: recipe.id,
       name: recipe.name,

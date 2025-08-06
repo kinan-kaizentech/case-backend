@@ -29,6 +29,8 @@ API documentation is available at:
 #### Recipes
 - [Get all recipes](https://case-backend.vercel.app/api/recipes)
 - [Get recipes by category (main-course)](https://case-backend.vercel.app/api/recipes?categoryId=main-course)
+- [Search recipes (mercimek)](https://case-backend.vercel.app/api/recipes?keyword=mercimek)
+- [Filter and search (main-course & patlıcan)](https://case-backend.vercel.app/api/recipes?categoryId=main-course&keyword=patlıcan)
 - [Get recipe details (Karnıyarık)](https://case-backend.vercel.app/api/recipes/1)
 
 #### Categories
@@ -37,8 +39,16 @@ API documentation is available at:
 ### API Routes
 - `GET /api/recipes` - Get all recipes
 - `GET /api/recipes?categoryId={categoryId}` - Get recipes by category
+- `GET /api/recipes?keyword={keyword}` - Search recipes by name or description
+- `GET /api/recipes?categoryId={categoryId}&keyword={keyword}` - Filter by category and search
 - `GET /api/recipes/{id}` - Get recipe details
 - `GET /api/categories` - Get all categories
+
+### Search Examples
+- `/api/recipes?keyword=mercimek` - Find recipes containing "mercimek" (e.g., Mercimek Çorbası)
+- `/api/recipes?keyword=patlıcan` - Find eggplant dishes (e.g., Karnıyarık, Patlıcan Musakka)
+- `/api/recipes?categoryId=soup&keyword=domates` - Find tomato-based soups
+- `/api/recipes?keyword=köfte` - Find meatball recipes
 
 ## Categories
 - `main-course` - Main Dishes

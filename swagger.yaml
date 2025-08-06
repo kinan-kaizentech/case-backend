@@ -12,7 +12,7 @@ paths:
   /api/recipes:
     get:
       summary: Get all recipes
-      description: Returns a list of recipes. Can be filtered by category.
+      description: Returns a list of recipes. Can be filtered by category and searched by keyword.
       parameters:
         - in: query
           name: categoryId
@@ -20,6 +20,12 @@ paths:
             type: string
           description: Filter recipes by category ID (e.g., main-course, soup, dessert)
           example: "main-course"
+        - in: query
+          name: keyword
+          schema:
+            type: string
+          description: Search recipes by name or description
+          example: "mercimek"
       responses:
         200:
           description: List of recipes

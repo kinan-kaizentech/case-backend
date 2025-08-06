@@ -48,4 +48,5 @@ export interface RecipeListItem {
 
 export interface RecipeFilters {
   categoryId?: string;
+  keyword?: string;
 }
