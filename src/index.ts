@@ -63,6 +63,9 @@ app.get('/swagger.yaml', (_req, res) => {
 });
 app.use(express.json());
 
+// Serve static files from the images directory
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 // Get all recipes
 app.get('/api/recipes', (req, res) => {
   try {
