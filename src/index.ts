@@ -67,7 +67,8 @@ app.use(express.json());
 app.get('/api/recipes', (req, res) => {
   try {
     const filters = {
-      categoryId: req.query.categoryId as string
+      categoryId: req.query.categoryId as string,
+      keyword: req.query.keyword as string
     };
     const result = recipeService.getRecipes(filters);
     res.json(result);
