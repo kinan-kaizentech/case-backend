@@ -19,12 +19,20 @@ npm run dev
 
 ## API Endpoints
 
-### Recipes
-- `GET /api/recipes` - Get all recipes
-- `GET /api/recipes?categoryId=main-course` - Get recipes by category
-- `GET /api/recipes/1` - Get recipe details
+### Live API Endpoints
 
-### Categories
+#### Recipes
+- [Get all recipes](https://case-backend-kagan.vercel.app/api/recipes)
+- [Get recipes by category (main-course)](https://case-backend-kagan.vercel.app/api/recipes?categoryId=main-course)
+- [Get recipe details (Karnıyarık)](https://case-backend-kagan.vercel.app/api/recipes/1)
+
+#### Categories
+- [Get all categories](https://case-backend-kagan.vercel.app/api/categories)
+
+### API Routes
+- `GET /api/recipes` - Get all recipes
+- `GET /api/recipes?categoryId={categoryId}` - Get recipes by category
+- `GET /api/recipes/{id}` - Get recipe details
 - `GET /api/categories` - Get all categories
 
 ## Categories
@@ -50,7 +58,9 @@ npm run dev
 10. İmam Bayıldı
 
 ## Documentation
-API documentation is available at `/api-docs` when server is running.
+API documentation is available at:
+- [Live API Documentation](https://case-backend-kagan.vercel.app/api-docs)
+- Local documentation at `/api-docs` when server is running
 
 ## Tech Stack
 - Express.js
