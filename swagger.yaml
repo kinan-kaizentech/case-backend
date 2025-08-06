@@ -47,7 +47,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Recipe'
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Recipe'
         404:
           description: Recipe not found
 

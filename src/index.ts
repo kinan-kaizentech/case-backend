@@ -95,7 +95,7 @@ app.get('/api/recipes/:id', (req, res) => {
       return res.status(404).json({ message: 'Recipe not found' });
     }
     
-    res.json({ data: recipe });
+    res.json(recipe);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ 
