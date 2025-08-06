@@ -9,7 +9,7 @@ export interface Nutrition {
   protein: number;
   carbohydrates: number;
   fat: number;
-
+  fiber: number;
 }
 
 export interface Category {
@@ -26,7 +26,8 @@ export interface Recipe {
   difficulty: string;
   prepTime: number;
   cookTime: number;
-
+  servings: number;
+  calories: number;
   image: string;
   ingredients: Ingredient[];
   instructions: string[];
@@ -47,18 +48,4 @@ export interface RecipeListItem {
 
 export interface RecipeFilters {
   categoryId?: string;
-}
-
-export interface RecipeListResponse {
-  data: RecipeListItem[];
-  total: number;
-}
-
-export interface RecipeDetailResponse {
-  data: Recipe;
-}
-
-export interface CategoryListResponse {
-  data: Category[];
-  total: number;
 }

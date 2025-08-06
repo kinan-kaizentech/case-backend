@@ -70,7 +70,7 @@ app.get('/api/recipes', (req, res) => {
       categoryId: req.query.categoryId as string
     };
     const result = recipeService.getRecipes(filters);
-    res.json({ data: result.data, total: result.total });
+    res.json(result);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ 
@@ -109,7 +109,7 @@ app.get('/api/recipes/:id', (req, res) => {
 app.get('/api/categories', (_req, res) => {
   try {
     const result = categoryService.getCategories();
-    res.json({ data: result.data, total: result.total });
+    res.json(result);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ 
@@ -119,24 +119,6 @@ app.get('/api/categories', (_req, res) => {
   }
 });
 
-// Get category by ID
-app.get('/api/categories/:id', (req, res) => {
-  try {
-    const category = categoryService.getCategoryById(req.params.id);
-    
-    if (!category) {
-      return res.status(404).json({ message: 'Category not found' });
-    }
-    
-    res.json({ data: category });
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ 
-      message: 'Internal server error',
-      error: error instanceof Error ? error.message : 'Unknown error'
-    });
-  }
-});
 
 // 404 handler
 app.use((_req, res) => {

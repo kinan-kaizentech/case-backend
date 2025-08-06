@@ -1,4 +1,4 @@
-import { Recipe, RecipeListItem, RecipeListResponse, RecipeDetailResponse, RecipeFilters } from '../types';
+import { Recipe, RecipeListItem, RecipeFilters } from '../types';
 import { CategoryService } from './categoryService';
 import recipes from '../data/recipes.json';
 
@@ -6,7 +6,7 @@ export class RecipeService {
   private recipes: Recipe[] = recipes as Recipe[];
   private categoryService: CategoryService = new CategoryService();
 
-  public getRecipes(filters?: RecipeFilters): RecipeListResponse {
+  public getRecipes(filters?: RecipeFilters): RecipeListItem[] {
     let filteredRecipes = this.recipes;
 
     // Apply filters
@@ -28,21 +28,16 @@ export class RecipeService {
       image: recipe.image
     }));
 
-    return {
-      data: recipeList,
-      total: recipeList.length
-    };
+    return recipeList;
   }
 
-  public getRecipeById(id: number): RecipeDetailResponse | null {
+  public getRecipeById(id: number): Recipe | null {
     const recipe = this.recipes.find(recipe => recipe.id === id);
     
     if (!recipe) {
       return null;
     }
 
-    return {
-      data: recipe
-    };
+    return recipe;
   }
 }

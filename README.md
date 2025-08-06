@@ -26,7 +26,6 @@ npm run dev
 
 ### Categories
 - `GET /api/categories` - Get all categories
-- `GET /api/categories/main-course` - Get category details
 
 ## Categories
 - `main-course` - Main Dishes

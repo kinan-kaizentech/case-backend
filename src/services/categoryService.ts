@@ -1,17 +1,14 @@
-import { Category, CategoryListResponse } from '../types';
+import { Category } from '../types';
 import categories from '../data/categories.json';
 
 export class CategoryService {
   private categories: Category[] = categories as Category[];
 
-  public getCategories(): CategoryListResponse {
-    return {
-      data: this.categories,
-      total: this.categories.length
-    };
+  public getCategories(): Category[] {
+    return this.categories;
   }
 
-  public getCategoryById(id: string): Category | undefined {
+  private getCategoryById(id: string): Category | undefined {
     return this.categories.find(category => category.id === id);
   }
 
