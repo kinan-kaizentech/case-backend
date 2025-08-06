@@ -17,6 +17,11 @@ npm install
 npm run dev
 ```
 
+## Documentation
+API documentation is available at:
+- [Live API Documentation](https://case-backend.vercel.app/api-docs)
+- Local documentation at `/api-docs` when server is running
+
 ## API Endpoints
 
 ### Live API Endpoints
@@ -56,11 +61,6 @@ npm run dev
 8. Pilav
 9. Patlıcan Musakka
 10. İmam Bayıldı
-
-## Documentation
-API documentation is available at:
-- [Live API Documentation](https://case-backend.vercel.app/api-docs)
-- Local documentation at `/api-docs` when server is running
 
 ## Tech Stack
 - Express.js
