@@ -30,9 +30,8 @@ export class RecipeService {
       description: recipe.description,
       categoryId: recipe.categoryId,
       category: this.categoryService.getCategoryName(recipe.categoryId),
-      difficulty: recipe.difficulty,
-      prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
+      calories: recipe.calories,
       image: recipe.image
     }));
 

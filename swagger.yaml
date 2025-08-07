@@ -42,10 +42,9 @@ paths:
                     "description": "Patlıcan içine kıymalı harç konularak yapılan geleneksel Türk yemeği",
                     "categoryId": "main-course",
                     "category": "Ana Yemek",
-                    "difficulty": "Medium",
-                    "prepTime": 30,
                     "cookTime": 45,
-                    "image": "https://example.com/images/karniyarik.jpg"
+                    "calories": 320,
+                    "image": "https://case-backend.vercel.app/images/karniyarik.jpg"
                   },
                   {
                     "id": 2,
@@ -53,10 +52,9 @@ paths:
                     "description": "Kırmızı mercimek ile yapılan besleyici ve lezzetli çorba",
                     "categoryId": "soup",
                     "category": "Çorba",
-                    "difficulty": "Easy",
-                    "prepTime": 15,
                     "cookTime": 30,
-                    "image": "https://example.com/images/mercimek-corbasi.jpg"
+                    "calories": 180,
+                    "image": "https://case-backend.vercel.app/images/mercimek.jpg"
                   }
                 ]
         500:
@@ -86,22 +84,19 @@ paths:
                   name: "Karnıyarık"
                   description: "Patlıcan içine kıymalı harç konularak yapılan geleneksel Türk yemeği"
                   categoryId: "main-course"
-                  difficulty: "Medium"
-                  prepTime: 30
                   cookTime: 45
-                  servings: 4
                   calories: 320
-                  image: "https://example.com/images/karniyarik.jpg"
+                  image: "https://case-backend.vercel.app/images/karniyarik.jpg"
                   ingredients: [
-                    { name: "patlıcan", amount: 4, unit: "adet" },
-                    { name: "kıyma", amount: 400, unit: "gram" },
-                    { name: "soğan", amount: 2, unit: "adet" },
-                    { name: "domates", amount: 2, unit: "adet" },
-                    { name: "yeşil biber", amount: 4, unit: "adet" },
-                    { name: "sarımsak", amount: 3, unit: "diş" },
-                    { name: "zeytinyağı", amount: 100, unit: "ml" },
-                    { name: "tuz", amount: 1, unit: "tatlı kaşığı" },
-                    { name: "karabiber", amount: 1, unit: "çay kaşığı" }
+                    { name: "Patlıcan", amount: 4, unit: "adet" },
+                    { name: "Kıyma", amount: 400, unit: "gram" },
+                    { name: "Soğan", amount: 2, unit: "adet" },
+                    { name: "Domates", amount: 2, unit: "adet" },
+                    { name: "Yeşil biber", amount: 4, unit: "adet" },
+                    { name: "Sarımsak", amount: 3, unit: "diş" },
+                    { name: "Zeytinyağı", amount: 100, unit: "ml" },
+                    { name: "Tuz", amount: 1, unit: "tatlı kaşığı" },
+                    { name: "Karabiber", amount: 1, unit: "çay kaşığı" }
                   ]
                   instructions: [
                     "Patlıcanları alacalı soyup tuzlu suda bekletin",
@@ -116,7 +111,6 @@ paths:
                     protein: 18
                     carbohydrates: 24
                     fat: 15
-                    fiber: 8
         400:
           $ref: '#/components/responses/BadRequest'
         404:
@@ -156,7 +150,7 @@ components:
   schemas:
     Recipe:
       type: object
-      required: [id, name, description, categoryId, difficulty, prepTime, cookTime, servings, calories, image, ingredients, instructions, nutrition]
+      required: [id, name, description, categoryId, cookTime, calories, image, ingredients, instructions, nutrition]
       properties:
         id:
           type: integer
@@ -170,19 +164,9 @@ components:
         categoryId:
           type: string
           description: Category identifier
-        difficulty:
-          type: string
-          description: Difficulty level of the recipe
-          enum: ["Easy", "Medium", "Hard"]
-        prepTime:
-          type: integer
-          description: Preparation time in minutes
         cookTime:
           type: integer
           description: Cooking time in minutes
-        servings:
-          type: integer
-          description: Number of servings
         calories:
           type: integer
           description: Calories per serving
@@ -205,7 +189,7 @@ components:
 
     RecipeListItem:
       type: object
-      required: [id, name, description, categoryId, category, difficulty, prepTime, cookTime, image]
+      required: [id, name, description, categoryId, category, cookTime, calories, image]
       properties:
         id:
           type: integer
@@ -222,16 +206,12 @@ components:
         category:
           type: string
           description: Category name in Turkish
-        difficulty:
-          type: string
-          description: Difficulty level of the recipe
-          enum: ["Easy", "Medium", "Hard"]
-        prepTime:
-          type: integer
-          description: Preparation time in minutes
         cookTime:
           type: integer
           description: Cooking time in minutes
+        calories:
+          type: integer
+          description: Calories per serving
         image:
           type: string
           description: URL to recipe image
@@ -266,7 +246,7 @@ components:
 
     Nutrition:
       type: object
-      required: [calories, protein, carbohydrates, fat, fiber]
+      required: [calories, protein, carbohydrates, fat]
       properties:
         calories:
           type: number
@@ -280,9 +260,6 @@ components:
         fat:
           type: number
           description: Fat content in grams
-        fiber:
-          type: number
-          description: Fiber content in grams
 
     Error:
       type: object

@@ -4,22 +4,19 @@
     "name": "Karnıyarık",
     "description": "Patlıcan içine kıymalı harç konularak yapılan geleneksel Türk yemeği",
     "categoryId": "main-course",
-    "difficulty": "Medium",
-    "prepTime": 30,
     "cookTime": 45,
-    "servings": 4,
     "calories": 320,
     "image": "https://case-backend.vercel.app/images/karniyarik.jpg",
     "ingredients": [
-      { "name": "patlıcan", "amount": 4, "unit": "adet" },
-      { "name": "kıyma", "amount": 400, "unit": "gram" },
-      { "name": "soğan", "amount": 2, "unit": "adet" },
-      { "name": "domates", "amount": 2, "unit": "adet" },
-      { "name": "yeşil biber", "amount": 4, "unit": "adet" },
-      { "name": "sarımsak", "amount": 3, "unit": "diş" },
-      { "name": "zeytinyağı", "amount": 100, "unit": "ml" },
-      { "name": "tuz", "amount": 1, "unit": "tatlı kaşığı" },
-      { "name": "karabiber", "amount": 1, "unit": "çay kaşığı" }
+      { "name": "Patlıcan", "amount": 4, "unit": "adet" },
+      { "name": "Kıyma", "amount": 400, "unit": "gram" },
+      { "name": "Soğan", "amount": 2, "unit": "adet" },
+      { "name": "Domates", "amount": 2, "unit": "adet" },
+      { "name": "Yeşil biber", "amount": 4, "unit": "adet" },
+      { "name": "Sarımsak", "amount": 3, "unit": "diş" },
+      { "name": "Zeytinyağı", "amount": 100, "unit": "ml" },
+      { "name": "Tuz", "amount": 1, "unit": "tatlı kaşığı" },
+      { "name": "Karabiber", "amount": 1, "unit": "çay kaşığı" }
     ],
     "instructions": [
       "Patlıcanları alacalı soyup tuzlu suda bekletin",
@@ -33,8 +30,7 @@
       "calories": 320,
       "protein": 18,
       "carbohydrates": 24,
-      "fat": 15,
-      "fiber": 8
+      "fat": 15
     }
   },
   {
@@ -42,20 +38,17 @@
     "name": "Mercimek Çorbası",
     "description": "Kırmızı mercimek ile yapılan besleyici ve lezzetli çorba",
     "categoryId": "soup",
-    "difficulty": "Easy",
-    "prepTime": 15,
     "cookTime": 30,
-    "servings": 6,
     "calories": 180,
     "image": "https://case-backend.vercel.app/images/mercimek.jpg",
     "ingredients": [
-      { "name": "kırmızı mercimek", "amount": 2, "unit": "su bardağı" },
-      { "name": "soğan", "amount": 1, "unit": "adet" },
-      { "name": "havuç", "amount": 1, "unit": "adet" },
-      { "name": "patates", "amount": 1, "unit": "adet" },
-      { "name": "zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
-      { "name": "tuz", "amount": 1, "unit": "tatlı kaşığı" },
-      { "name": "karabiber", "amount": 1, "unit": "çay kaşığı" }
+      { "name": "Kırmızı mercimek", "amount": 2, "unit": "su bardağı" },
+      { "name": "Soğan", "amount": 1, "unit": "adet" },
+      { "name": "Havuç", "amount": 1, "unit": "adet" },
+      { "name": "Patates", "amount": 1, "unit": "adet" },
+      { "name": "Zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "Tuz", "amount": 1, "unit": "tatlı kaşığı" },
+      { "name": "Karabiber", "amount": 1, "unit": "çay kaşığı" }
     ],
     "instructions": [
       "Sebzeleri küçük küçük doğrayın",
@@ -70,8 +63,7 @@
       "calories": 180,
       "protein": 10,
       "carbohydrates": 30,
-      "fat": 4,
-      "fiber": 6
+      "fat": 4
     }
   },
   {
@@ -79,20 +71,17 @@
     "name": "Yaprak Sarma",
     "description": "Asma yaprağına pirinç ve baharatlarla hazırlanan iç harç ile yapılan zeytinyağlı yemek",
     "categoryId": "vegetarian",
-    "difficulty": "Hard",
-    "prepTime": 60,
     "cookTime": 45,
-    "servings": 6,
     "calories": 220,
     "image": "https://case-backend.vercel.app/images/sarma.jpg",
     "ingredients": [
-      { "name": "asma yaprağı", "amount": 40, "unit": "adet" },
-      { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
-      { "name": "soğan", "amount": 2, "unit": "adet" },
-      { "name": "maydanoz", "amount": 1, "unit": "demet" },
-      { "name": "nane", "amount": 0.5, "unit": "demet" },
-      { "name": "zeytinyağı", "amount": 100, "unit": "ml" },
-      { "name": "limon", "amount": 1, "unit": "adet" }
+      { "name": "Asma yaprağı", "amount": 40, "unit": "adet" },
+      { "name": "Pirinç", "amount": 2, "unit": "su bardağı" },
+      { "name": "Soğan", "amount": 2, "unit": "adet" },
+      { "name": "Maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "Nane", "amount": 0.5, "unit": "demet" },
+      { "name": "Zeytinyağı", "amount": 100, "unit": "ml" },
+      { "name": "Limon", "amount": 1, "unit": "adet" }
     ],
     "instructions": [
       "Yaprakları tuzlu suda haşlayın",
@@ -107,8 +96,7 @@
       "calories": 220,
       "protein": 5,
       "carbohydrates": 35,
-      "fat": 8,
-      "fiber": 4
+      "fat": 8
     }
   },
   {
@@ -116,18 +104,15 @@
     "name": "İskender Kebap",
     "description": "Döner et, pide, domates sosu ve yoğurt ile hazırlanan meşhur Türk yemeği",
     "categoryId": "main-course",
-    "difficulty": "Hard",
-    "prepTime": 45,
     "cookTime": 60,
-    "servings": 4,
     "calories": 650,
     "image": "https://case-backend.vercel.app/images/iskender.jpg",
     "ingredients": [
-      { "name": "kuzu eti", "amount": 500, "unit": "gram" },
-      { "name": "pide", "amount": 4, "unit": "adet" },
-      { "name": "tereyağı", "amount": 100, "unit": "gram" },
-      { "name": "domates", "amount": 4, "unit": "adet" },
-      { "name": "yoğurt", "amount": 400, "unit": "gram" }
+      { "name": "Kuzu eti", "amount": 500, "unit": "gram" },
+      { "name": "Pide", "amount": 4, "unit": "adet" },
+      { "name": "Tereyağı", "amount": 100, "unit": "gram" },
+      { "name": "Domates", "amount": 4, "unit": "adet" },
+      { "name": "Yoğurt", "amount": 400, "unit": "gram" }
     ],
     "instructions": [
       "Eti ince ince dilimleyin ve marine edin",
@@ -143,8 +128,7 @@
       "calories": 650,
       "protein": 35,
       "carbohydrates": 45,
-      "fat": 28,
-      "fiber": 3
+      "fat": 28
     }
   },
   {
@@ -152,18 +136,15 @@
     "name": "Sütlaç",
     "description": "Pirinç, süt ve şeker ile yapılan geleneksel Türk tatlısı",
     "categoryId": "dessert",
-    "difficulty": "Medium",
-    "prepTime": 20,
     "cookTime": 40,
-    "servings": 6,
     "calories": 285,
     "image": "https://case-backend.vercel.app/images/sutlac.jpg",
     "ingredients": [
-      { "name": "süt", "amount": 1, "unit": "litre" },
-      { "name": "pirinç", "amount": 0.5, "unit": "su bardağı" },
-      { "name": "şeker", "amount": 1, "unit": "su bardağı" },
-      { "name": "pirinç unu", "amount": 2, "unit": "yemek kaşığı" },
-      { "name": "vanilya", "amount": 1, "unit": "paket" }
+      { "name": "Süt", "amount": 1, "unit": "litre" },
+      { "name": "Pirinç", "amount": 0.5, "unit": "su bardağı" },
+      { "name": "Şeker", "amount": 1, "unit": "su bardağı" },
+      { "name": "Pirinç unu", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "Vanilya", "amount": 1, "unit": "paket" }
     ],
     "instructions": [
       "Pirinci yumuşayana kadar haşlayın",
@@ -177,8 +158,7 @@
       "calories": 285,
       "protein": 8,
       "carbohydrates": 45,
-      "fat": 6,
-      "fiber": 0
+      "fat": 6
     }
   },
   {
@@ -186,18 +166,15 @@
     "name": "Menemen",
     "description": "Domates, biber ve yumurta ile yapılan geleneksel Türk kahvaltılık yemeği",
     "categoryId": "breakfast",
-    "difficulty": "Easy",
-    "prepTime": 10,
     "cookTime": 15,
-    "servings": 2,
     "calories": 240,
     "image": "https://case-backend.vercel.app/images/menemen.jpg",
     "ingredients": [
-      { "name": "domates", "amount": 3, "unit": "adet" },
-      { "name": "yeşil biber", "amount": 2, "unit": "adet" },
-      { "name": "yumurta", "amount": 3, "unit": "adet" },
-      { "name": "zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
-      { "name": "tuz", "amount": 1, "unit": "çay kaşığı" }
+      { "name": "Domates", "amount": 3, "unit": "adet" },
+      { "name": "Yeşil biber", "amount": 2, "unit": "adet" },
+      { "name": "Yumurta", "amount": 3, "unit": "adet" },
+      { "name": "Zeytinyağı", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "Tuz", "amount": 1, "unit": "çay kaşığı" }
     ],
     "instructions": [
       "Domatesleri küp küp doğrayın",
@@ -211,8 +188,7 @@
       "calories": 240,
       "protein": 12,
       "carbohydrates": 8,
-      "fat": 18,
-      "fiber": 3
+      "fat": 18
     }
   },
   {
@@ -220,18 +196,15 @@
     "name": "Su Böreği",
     "description": "Kat kat yufkaların arasına peynir konularak yapılan geleneksel Türk böreği",
     "categoryId": "pastry",
-    "difficulty": "Hard",
-    "prepTime": 45,
     "cookTime": 35,
-    "servings": 8,
     "calories": 380,
     "image": "https://case-backend.vercel.app/images/borek.jpg",
     "ingredients": [
-      { "name": "yufka", "amount": 5, "unit": "adet" },
-      { "name": "beyaz peynir", "amount": 400, "unit": "gram" },
-      { "name": "maydanoz", "amount": 1, "unit": "demet" },
-      { "name": "tereyağı", "amount": 150, "unit": "gram" },
-      { "name": "süt", "amount": 1, "unit": "su bardağı" }
+      { "name": "Yufka", "amount": 5, "unit": "adet" },
+      { "name": "Beyaz peynir", "amount": 400, "unit": "gram" },
+      { "name": "Maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "Tereyağı", "amount": 150, "unit": "gram" },
+      { "name": "Süt", "amount": 1, "unit": "su bardağı" }
     ],
     "instructions": [
       "Yufkaları ıslatın",
@@ -245,8 +218,7 @@
       "calories": 380,
       "protein": 15,
       "carbohydrates": 28,
-      "fat": 22,
-      "fiber": 1
+      "fat": 22
     }
   },
   {
@@ -254,18 +226,15 @@
     "name": "Pilav",
     "description": "Tereyağlı ve şehriyeli geleneksel Türk pilavı",
     "categoryId": "rice-pasta",
-    "difficulty": "Medium",
-    "prepTime": 10,
     "cookTime": 20,
-    "servings": 6,
     "calories": 280,
     "image": "https://case-backend.vercel.app/images/pilav.webp",
     "ingredients": [
-      { "name": "pirinç", "amount": 2, "unit": "su bardağı" },
-      { "name": "şehriye", "amount": 2, "unit": "yemek kaşığı" },
-      { "name": "tereyağı", "amount": 50, "unit": "gram" },
-      { "name": "sıcak su", "amount": 3.5, "unit": "su bardağı" },
-      { "name": "tuz", "amount": 1.5, "unit": "tatlı kaşığı" }
+      { "name": "Pirinç", "amount": 2, "unit": "su bardağı" },
+      { "name": "Şehriye", "amount": 2, "unit": "yemek kaşığı" },
+      { "name": "Tereyağı", "amount": 50, "unit": "gram" },
+      { "name": "Sıcak su", "amount": 3.5, "unit": "su bardağı" },
+      { "name": "Tuz", "amount": 1.5, "unit": "tatlı kaşığı" }
     ],
     "instructions": [
       "Pirinci yıkayıp süzün",
@@ -279,8 +248,7 @@
       "calories": 280,
       "protein": 5,
       "carbohydrates": 48,
-      "fat": 8,
-      "fiber": 1
+      "fat": 8
     }
   },
   {
@@ -288,19 +256,16 @@
     "name": "Patlıcan Musakka",
     "description": "Kıymalı ve patlıcanlı geleneksel Türk yemeği",
     "categoryId": "main-course",
-    "difficulty": "Medium",
-    "prepTime": 30,
     "cookTime": 40,
-    "servings": 6,
     "calories": 340,
     "image": "https://case-backend.vercel.app/images/musakka.webp",
     "ingredients": [
-      { "name": "patlıcan", "amount": 6, "unit": "adet" },
-      { "name": "kıyma", "amount": 400, "unit": "gram" },
-      { "name": "soğan", "amount": 2, "unit": "adet" },
-      { "name": "domates", "amount": 3, "unit": "adet" },
-      { "name": "biber", "amount": 2, "unit": "adet" },
-      { "name": "zeytinyağı", "amount": 100, "unit": "ml" }
+      { "name": "Patlıcan", "amount": 6, "unit": "adet" },
+      { "name": "Kıyma", "amount": 400, "unit": "gram" },
+      { "name": "Soğan", "amount": 2, "unit": "adet" },
+      { "name": "Domates", "amount": 3, "unit": "adet" },
+      { "name": "Biber", "amount": 2, "unit": "adet" },
+      { "name": "Zeytinyağı", "amount": 100, "unit": "ml" }
     ],
     "instructions": [
       "Patlıcanları dilimleyip tuzlayın",
@@ -314,8 +279,7 @@
       "calories": 340,
       "protein": 16,
       "carbohydrates": 22,
-      "fat": 20,
-      "fiber": 7
+      "fat": 20
     }
   },
   {
@@ -323,19 +287,16 @@
     "name": "İmam Bayıldı",
     "description": "Zeytinyağlı patlıcan yemeği",
     "categoryId": "vegetarian",
-    "difficulty": "Medium",
-    "prepTime": 25,
     "cookTime": 35,
-    "servings": 4,
     "calories": 220,
     "image": "https://case-backend.vercel.app/images/imambayildi.webp",
     "ingredients": [
-      { "name": "patlıcan", "amount": 4, "unit": "adet" },
-      { "name": "soğan", "amount": 3, "unit": "adet" },
-      { "name": "domates", "amount": 2, "unit": "adet" },
-      { "name": "sarımsak", "amount": 4, "unit": "diş" },
-      { "name": "maydanoz", "amount": 1, "unit": "demet" },
-      { "name": "zeytinyağı", "amount": 100, "unit": "ml" }
+      { "name": "Patlıcan", "amount": 4, "unit": "adet" },
+      { "name": "Soğan", "amount": 3, "unit": "adet" },
+      { "name": "Domates", "amount": 2, "unit": "adet" },
+      { "name": "Sarımsak", "amount": 4, "unit": "diş" },
+      { "name": "Maydanoz", "amount": 1, "unit": "demet" },
+      { "name": "Zeytinyağı", "amount": 100, "unit": "ml" }
     ],
     "instructions": [
       "Patlıcanları boydan yarın",
@@ -349,8 +310,7 @@
       "calories": 220,
       "protein": 4,
       "carbohydrates": 20,
-      "fat": 14,
-      "fiber": 8
+      "fat": 14
     }
   }
 ]
