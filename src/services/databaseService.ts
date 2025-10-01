@@ -6,10 +6,16 @@ export class DatabaseService {
   private db: Database.Database;
 
   private constructor() {
-    // Create database file in the project root
-    const dbPath = path.join(__dirname, '../../database.sqlite');
+    // Use /tmp directory for Vercel serverless environment
+    // Note: Data will be lost on each deployment and may not persist between function invocations
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL;
+    const dbPath = isProduction 
+      ? '/tmp/database.sqlite'  // Vercel's writable temp directory
+      : path.join(__dirname, '../../database.sqlite');  // Local development
+    
     this.db = new Database(dbPath);
     this.initializeTables();
+    console.log(`Database initialized at: ${dbPath}`);
   }
 
   public static getInstance(): DatabaseService {
