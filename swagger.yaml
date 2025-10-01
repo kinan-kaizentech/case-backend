@@ -9,6 +9,198 @@ servers:
     description: API Server
 
 paths:
+  /api/auth/register:
+    post:
+      summary: Register a new user
+      description: Creates a new user account with email, password, name, and optional birthday
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - name
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                  example: "user@example.com"
+                password:
+                  type: string
+                  format: password
+                  minLength: 6
+                  description: User's password (minimum 6 characters)
+                  example: "password123"
+                name:
+                  type: string
+                  description: User's full name
+                  example: "John Doe"
+                birthday:
+                  type: string
+                  format: date
+                  description: User's birthday in YYYY-MM-DD format (optional)
+                  example: "1990-01-15"
+      responses:
+        201:
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+              example:
+                user:
+                  id: "550e8400-e29b-41d4-a716-446655440000"
+                  email: "user@example.com"
+                  name: "John Doe"
+                  birthday: "1990-01-15"
+                  createdAt: "2025-10-01T10:30:00.000Z"
+                  updatedAt: "2025-10-01T10:30:00.000Z"
+                message: "User registered successfully"
+        400:
+          description: Bad request - validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                missingFields:
+                  value:
+                    message: "Missing required fields: email, password, and name are required"
+                invalidEmail:
+                  value:
+                    message: "Invalid email format"
+                shortPassword:
+                  value:
+                    message: "Password must be at least 6 characters long"
+                invalidBirthday:
+                  value:
+                    message: "Birthday must be in YYYY-MM-DD format"
+        409:
+          description: Conflict - email already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Email already exists"
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+  /api/auth/login:
+    post:
+      summary: Login user
+      description: Authenticates a user with email and password
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                  example: "user@example.com"
+                password:
+                  type: string
+                  format: password
+                  description: User's password
+                  example: "password123"
+      responses:
+        200:
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+              example:
+                user:
+                  id: "550e8400-e29b-41d4-a716-446655440000"
+                  email: "user@example.com"
+                  name: "John Doe"
+                  birthday: "1990-01-15"
+                  createdAt: "2025-10-01T10:30:00.000Z"
+                  updatedAt: "2025-10-01T10:30:00.000Z"
+                message: "Login successful"
+        400:
+          description: Bad request - missing credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Email and password are required"
+        401:
+          description: Unauthorized - invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Invalid email or password"
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+  /api/auth/profile/{userId}:
+    get:
+      summary: Get user profile
+      description: Retrieves user profile information by UUID
+      tags:
+        - Authentication
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: User's UUID
+          example: "550e8400-e29b-41d4-a716-446655440000"
+      responses:
+        200:
+          description: User profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+              example:
+                id: "550e8400-e29b-41d4-a716-446655440000"
+                email: "user@example.com"
+                name: "John Doe"
+                birthday: "1990-01-15"
+                createdAt: "2025-10-01T10:30:00.000Z"
+                updatedAt: "2025-10-01T10:30:00.000Z"
+        400:
+          description: Bad request - invalid user ID format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Invalid user ID format"
+        404:
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "User not found"
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
   /api/recipes:
     get:
       summary: Get all recipes
@@ -260,6 +452,44 @@ components:
         fat:
           type: number
           description: Fat content in grams
+
+    UserProfile:
+      type: object
+      required: [id, email, name, createdAt, updatedAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique user identifier (UUID v4)
+        email:
+          type: string
+          format: email
+          description: User's email address
+        name:
+          type: string
+          description: User's full name
+        birthday:
+          type: string
+          format: date
+          description: User's birthday in YYYY-MM-DD format (optional)
+        createdAt:
+          type: string
+          format: date-time
+          description: Account creation timestamp (ISO 8601)
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601)
+
+    AuthResponse:
+      type: object
+      required: [user, message]
+      properties:
+        user:
+          $ref: '#/components/schemas/UserProfile'
+        message:
+          type: string
+          description: Success message
 
     Error:
       type: object
